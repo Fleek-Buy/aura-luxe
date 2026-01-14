@@ -3,6 +3,8 @@ import categoryFace from "@/assets/category-face.jpg";
 import categoryBody from "@/assets/category-body.jpg";
 import categorySun from "@/assets/category-sun.jpg";
 import categoryWellness from "@/assets/category-wellness.jpg";
+import categoryClothing from "@/assets/category-clothing.jpg";
+import categoryShoes from "@/assets/category-shoes.jpg";
 
 const categories = [
   {
@@ -29,6 +31,18 @@ const categories = [
     image: categoryWellness,
     count: "24 Products",
   },
+  {
+    title: "Clothing",
+    description: "Premium apparel & sustainable fashion",
+    image: categoryClothing,
+    count: "56 Products",
+  },
+  {
+    title: "Footwear",
+    description: "Designer sneakers & luxury shoes",
+    image: categoryShoes,
+    count: "38 Products",
+  },
 ];
 
 const CategorySection = () => {
@@ -44,12 +58,12 @@ const CategorySection = () => {
             Explore Our Collections
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Discover products crafted with nature's finest ingredients, designed for conscious beauty lovers.
+            Discover products crafted with premium quality, from skincare to fashion essentials.
           </p>
         </div>
 
         {/* Category Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, index) => (
             <Link
               key={category.title}

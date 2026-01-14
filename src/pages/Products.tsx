@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Heart, ShoppingCart, Star, Leaf, Filter, Grid3X3, LayoutList, ChevronDown, X, SlidersHorizontal, ChevronRight } from "lucide-react";
+import { Heart, ShoppingCart, Star, Leaf, Grid3X3, LayoutList, ChevronDown, X, SlidersHorizontal } from "lucide-react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -16,25 +16,41 @@ import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
+import productShirt from "@/assets/product-shirt.jpg";
+import productDress from "@/assets/product-dress.jpg";
+import productSneakers from "@/assets/product-sneakers.jpg";
+import productLoafers from "@/assets/product-loafers.jpg";
+import productSweater from "@/assets/product-sweater.jpg";
+import productJeans from "@/assets/product-jeans.jpg";
 
 const allProducts = [
+  // Skincare
   { id: 1, name: "Vitamin C Glow Serum", description: "Brightening face serum with 15% Vitamin C", price: 68, originalPrice: 85, rating: 4.9, reviews: 234, image: product1, badge: "Best Seller", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Face Care" },
   { id: 2, name: "Nourishing Body Lotion", description: "Deep hydration with shea butter & aloe", price: 42, originalPrice: null, rating: 4.8, reviews: 189, image: product2, badge: null, badgeColor: "", isOrganic: true, category: "Body Care" },
   { id: 3, name: "Hydra-Glow Face Cream", description: "24-hour moisture with hyaluronic acid", price: 78, originalPrice: null, rating: 4.9, reviews: 312, image: product3, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
   { id: 4, name: "Calm & Balance Oil", description: "Aromatherapy blend for relaxation", price: 54, originalPrice: 72, rating: 4.7, reviews: 156, image: product4, badge: "20% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Wellness" },
-  { id: 5, name: "Rose Petal Face Mist", description: "Hydrating mist with pure rose water", price: 38, originalPrice: null, rating: 4.9, reviews: 45, image: product1, badge: "Just In", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
-  { id: 6, name: "Retinol Night Cream", description: "Anti-aging formula with 0.5% retinol", price: 89, originalPrice: null, rating: 4.8, reviews: 23, image: product2, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
-  { id: 7, name: "SPF 50 Sunscreen", description: "Lightweight mineral sun protection", price: 35, originalPrice: null, rating: 4.6, reviews: 278, image: product3, badge: null, badgeColor: "", isOrganic: false, category: "Sun Protection" },
-  { id: 8, name: "Lavender Body Butter", description: "Rich moisturizing with calming scent", price: 48, originalPrice: 58, rating: 4.8, reviews: 167, image: product4, badge: "17% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Body Care" },
-  { id: 9, name: "Collagen Boost Serum", description: "Firms and plumps with marine collagen", price: 95, originalPrice: null, rating: 5.0, reviews: 12, image: product3, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: false, category: "Face Care" },
-  { id: 10, name: "Green Tea Cleanser", description: "Gentle daily cleanser with antioxidants", price: 32, originalPrice: null, rating: 4.7, reviews: 67, image: product4, badge: null, badgeColor: "", isOrganic: true, category: "Face Care" },
-  { id: 11, name: "Peptide Eye Cream", description: "Reduces dark circles and puffiness", price: 65, originalPrice: null, rating: 4.9, reviews: 34, image: product1, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
-  { id: 12, name: "Essential Oil Set", description: "5 premium aromatherapy oils collection", price: 85, originalPrice: 110, rating: 4.9, reviews: 89, image: product2, badge: "23% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Wellness" },
+  { id: 5, name: "SPF 50 Sunscreen", description: "Lightweight mineral sun protection", price: 35, originalPrice: null, rating: 4.6, reviews: 278, image: product3, badge: null, badgeColor: "", isOrganic: false, category: "Sun Protection" },
+  
+  // Clothing
+  { id: 6, name: "Premium Cotton T-Shirt", description: "Soft organic cotton, minimalist design", price: 45, originalPrice: null, rating: 4.8, reviews: 156, image: productShirt, badge: "Best Seller", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Clothing" },
+  { id: 7, name: "Linen Summer Dress", description: "Elegant sage green midi dress", price: 128, originalPrice: 160, rating: 4.9, reviews: 89, image: productDress, badge: "20% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Clothing" },
+  { id: 8, name: "Cashmere Knit Sweater", description: "Cozy premium cashmere in cream", price: 195, originalPrice: null, rating: 5.0, reviews: 67, image: productSweater, badge: "Premium", badgeColor: "bg-primary text-primary-foreground", isOrganic: false, category: "Clothing" },
+  { id: 9, name: "Classic Denim Jeans", description: "Premium dark wash, perfect fit", price: 89, originalPrice: null, rating: 4.7, reviews: 234, image: productJeans, badge: null, badgeColor: "", isOrganic: true, category: "Clothing" },
+  
+  // Footwear
+  { id: 10, name: "White Leather Sneakers", description: "Minimalist design, premium comfort", price: 145, originalPrice: null, rating: 4.9, reviews: 312, image: productSneakers, badge: "Best Seller", badgeColor: "bg-accent text-accent-foreground", isOrganic: false, category: "Footwear" },
+  { id: 11, name: "Brown Leather Loafers", description: "Handcrafted Italian leather", price: 225, originalPrice: 275, rating: 4.8, reviews: 78, image: productLoafers, badge: "18% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: false, category: "Footwear" },
+  { id: 12, name: "Running Sneakers", description: "Lightweight performance shoes", price: 135, originalPrice: null, rating: 4.7, reviews: 189, image: productSneakers, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: false, category: "Footwear" },
+  
+  // More skincare
+  { id: 13, name: "Rose Petal Face Mist", description: "Hydrating mist with pure rose water", price: 38, originalPrice: null, rating: 4.9, reviews: 45, image: product1, badge: "Just In", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
+  { id: 14, name: "Retinol Night Cream", description: "Anti-aging formula with 0.5% retinol", price: 89, originalPrice: null, rating: 4.8, reviews: 23, image: product2, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true, category: "Face Care" },
+  { id: 15, name: "Essential Oil Set", description: "5 premium aromatherapy oils collection", price: 85, originalPrice: 110, rating: 4.9, reviews: 89, image: product4, badge: "23% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Wellness" },
+  { id: 16, name: "Lavender Body Butter", description: "Rich moisturizing with calming scent", price: 48, originalPrice: 58, rating: 4.8, reviews: 167, image: product2, badge: "17% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true, category: "Body Care" },
 ];
 
-const categories = ["All", "Face Care", "Body Care", "Sun Protection", "Wellness"];
-const priceRanges = ["All Prices", "Under $50", "$50-$75", "$75-$100", "Over $100"];
-const sortOptions = ["Featured", "Price: Low to High", "Price: High to Low", "Rating", "Newest"];
+const categories = ["All", "Face Care", "Body Care", "Sun Protection", "Wellness", "Clothing", "Footwear"];
+const priceRanges = ["All Prices", "Under $50", "$50-$100", "$100-$200", "Over $200"];
 
 const ProductCard = ({ product }: { product: typeof allProducts[0] }) => {
   return (
@@ -111,7 +127,6 @@ const ProductCard = ({ product }: { product: typeof allProducts[0] }) => {
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPrice, setSelectedPrice] = useState("All Prices");
-  const [sortBy, setSortBy] = useState("Featured");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [showFilters, setShowFilters] = useState(false);
 
@@ -120,9 +135,9 @@ const Products = () => {
     
     if (selectedPrice !== "All Prices") {
       if (selectedPrice === "Under $50" && product.price >= 50) return false;
-      if (selectedPrice === "$50-$75" && (product.price < 50 || product.price > 75)) return false;
-      if (selectedPrice === "$75-$100" && (product.price < 75 || product.price > 100)) return false;
-      if (selectedPrice === "Over $100" && product.price <= 100) return false;
+      if (selectedPrice === "$50-$100" && (product.price < 50 || product.price > 100)) return false;
+      if (selectedPrice === "$100-$200" && (product.price < 100 || product.price > 200)) return false;
+      if (selectedPrice === "Over $200" && product.price <= 200) return false;
     }
     
     return true;
@@ -167,7 +182,7 @@ const Products = () => {
               All Products
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              Explore our complete collection of premium skincare and wellness products, crafted with the finest organic ingredients.
+              Explore our complete collection of premium skincare, fashion, and lifestyle products.
             </p>
           </div>
         </div>
@@ -195,7 +210,7 @@ const Products = () => {
               </Button>
 
               {/* Category Pills */}
-              <div className="hidden md:flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2 flex-wrap">
                 {categories.map((category) => (
                   <Button
                     key={category}
@@ -214,7 +229,7 @@ const Products = () => {
 
             <div className="flex items-center gap-3">
               <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground">
-                Sort: {sortBy}
+                Sort: Featured
                 <ChevronDown className="h-4 w-4" />
               </Button>
               <div className="flex items-center gap-1 border-l border-border pl-3">

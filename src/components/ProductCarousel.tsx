@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, ShoppingCart, Star, Leaf, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, ShoppingCart, Star, Leaf, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -12,6 +12,10 @@ import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
+import productShirt from "@/assets/product-shirt.jpg";
+import productDress from "@/assets/product-dress.jpg";
+import productSneakers from "@/assets/product-sneakers.jpg";
+import productLoafers from "@/assets/product-loafers.jpg";
 
 interface Product {
   id: number;
@@ -32,8 +36,10 @@ const defaultProducts: Product[] = [
   { id: 2, name: "Nourishing Body Lotion", description: "Deep hydration with shea butter & aloe", price: 42, originalPrice: null, rating: 4.8, reviews: 189, image: product2, badge: null, badgeColor: "", isOrganic: true },
   { id: 3, name: "Hydra-Glow Face Cream", description: "24-hour moisture with hyaluronic acid", price: 78, originalPrice: null, rating: 4.9, reviews: 312, image: product3, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true },
   { id: 4, name: "Calm & Balance Oil", description: "Aromatherapy blend for relaxation", price: 54, originalPrice: 72, rating: 4.7, reviews: 156, image: product4, badge: "20% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true },
-  { id: 5, name: "Rose Petal Face Mist", description: "Hydrating mist with pure rose water", price: 38, originalPrice: null, rating: 4.9, reviews: 45, image: product1, badge: "Just In", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true },
-  { id: 6, name: "Retinol Night Cream", description: "Anti-aging formula with 0.5% retinol", price: 89, originalPrice: null, rating: 4.8, reviews: 23, image: product2, badge: "New", badgeColor: "bg-secondary text-secondary-foreground", isOrganic: true },
+  { id: 6, name: "Premium Cotton T-Shirt", description: "Soft organic cotton, minimalist design", price: 45, originalPrice: null, rating: 4.8, reviews: 156, image: productShirt, badge: "Best Seller", badgeColor: "bg-accent text-accent-foreground", isOrganic: true },
+  { id: 7, name: "Linen Summer Dress", description: "Elegant sage green midi dress", price: 128, originalPrice: 160, rating: 4.9, reviews: 89, image: productDress, badge: "20% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: true },
+  { id: 10, name: "White Leather Sneakers", description: "Minimalist design, premium comfort", price: 145, originalPrice: null, rating: 4.9, reviews: 312, image: productSneakers, badge: "Best Seller", badgeColor: "bg-accent text-accent-foreground", isOrganic: false },
+  { id: 11, name: "Brown Leather Loafers", description: "Handcrafted Italian leather", price: 225, originalPrice: 275, rating: 4.8, reviews: 78, image: productLoafers, badge: "18% Off", badgeColor: "bg-accent text-accent-foreground", isOrganic: false },
 ];
 
 interface ProductCarouselProps {
