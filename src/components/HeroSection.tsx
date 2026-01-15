@@ -2,21 +2,13 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBanner from "@/assets/hero-banner.jpg";
+import GridLightAnimation from "./GridLightAnimation";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-background overflow-hidden">
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div 
-          className="h-full w-full" 
-          style={{
-            backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 1px, transparent 1px),
-                             linear-gradient(to bottom, hsl(var(--foreground)) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px'
-          }} 
-        />
-      </div>
+      {/* Animated Grid with Light Beams */}
+      <GridLightAnimation />
 
       {/* Floating Geometric Shapes */}
       <motion.div 
