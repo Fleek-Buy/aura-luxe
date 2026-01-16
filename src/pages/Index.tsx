@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import CategorySection from "@/components/CategorySection";
 import ProductCarousel from "@/components/ProductCarousel";
+import HorizontalProductScroll from "@/components/HorizontalProductScroll";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import TrustSection from "@/components/TrustSection";
 import NewsletterSection from "@/components/NewsletterSection";
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <CategorySection />
+        <HorizontalProductScroll />
         <ProductCarousel 
           title="Customer Favorites" 
           badge="Featured Products"
