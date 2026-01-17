@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -389,6 +390,10 @@ const Products = () => {
   const [selectedPrice, setSelectedPrice] = useState("All Prices");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [showFilters, setShowFilters] = useState(false);
+  
+  const autoplayPlugin = useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
 
   const filteredProducts = allProducts.filter((product) => {
     if (selectedCategory !== "All" && product.category !== selectedCategory)
@@ -428,6 +433,7 @@ const Products = () => {
             align: "start",
             loop: true,
           }}
+          plugins={[autoplayPlugin.current]}
           className="w-full"
         >
           <CarouselContent className="m-0">
