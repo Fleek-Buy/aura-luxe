@@ -95,6 +95,9 @@ const Header = () => {
             <Link to="/sale" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
               Sale
             </Link>
+             <Link to="/products" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
+              All Products
+            </Link>
           </nav>
         </div>
       )}
