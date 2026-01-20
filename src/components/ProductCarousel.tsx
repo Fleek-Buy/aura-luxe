@@ -163,31 +163,35 @@ const ProductCarousel = ({
         </div>
 
         {/* Carousel */}
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-4">
-            {products.map((product, index) => (
-              <CarouselItem 
-                key={product.id} 
-                className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-              >
-                <div 
-                  className="animate-fade-in h-full" 
-                  style={{ animationDelay: `${index * 0.1}s` }}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {products.map((product, index) => (
+                <CarouselItem 
+                  key={product.id} 
+                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
-                  <ProductCard product={product} />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-12" />
-          <CarouselNext className="hidden md:flex -right-12" />
-        </Carousel>
+                  <div 
+                    className="animate-fade-in h-full" 
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <ProductCard product={product} />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:flex items-center justify-center gap-2 mt-6">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </section>
   );
