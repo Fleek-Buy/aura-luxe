@@ -6,6 +6,7 @@ import HorizontalProductScroll from "@/components/HorizontalProductScroll";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import TrustSection from "@/components/TrustSection";
 import NewsletterSection from "@/components/NewsletterSection";
+import AvailablePlatforms from "@/components/AvailablePlatforms";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
         <TestimonialsCarousel />
         <TrustSection />
         <NewsletterSection />
+        <AvailablePlatforms />
       </main>
       <Footer />
     </div>
