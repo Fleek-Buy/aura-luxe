@@ -6,6 +6,7 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import PaymentIcon from "react-payment-icons-inline";
 import logo from "/FullLogo.png";
 
 const footerLinks = [
@@ -26,15 +27,13 @@ const socialLinks = [
 ];
 
 const paymentMethods = [
-  "AMEX",
-  "Diners",
-  "Fiserv",
-  "GPay",
-  "Maestro",
-  "Mastercard",
-  "Paytm",
-  "RuPay",
-  "Visa",
+  { icon: "amex", label: "AMEX" },
+  { icon: "diners", label: "Diners" },
+  { icon: "googlepay", label: "GPay" },
+  { icon: "maestro", label: "Maestro" },
+  { icon: "mastercard", label: "Mastercard" },
+  { icon: "paypal", label: "PayPal" },
+  { icon: "visa", label: "Visa" },
 ];
 
 const Footer = () => {
@@ -143,10 +142,13 @@ const Footer = () => {
           <div className="flex flex-wrap justify-center gap-3">
             {paymentMethods.map((method) => (
               <div
-                key={method}
-                className="px-3 py-1.5 bg-primary-foreground/10 rounded text-xs font-semibold text-primary-foreground/90"
+                key={method.icon}
+                className="px-2 py-1.5 bg-primary-foreground rounded-md flex items-center justify-center"
               >
-                {method}
+                <PaymentIcon 
+                  icon={method.icon} 
+                  style={{ width: 40, height: 25 }}
+                />
               </div>
             ))}
           </div>
